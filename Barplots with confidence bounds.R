@@ -35,26 +35,26 @@ ggplot(df1, aes(x=Indicator, y=Prevalence, fill=Age)) +
   scale_y_continuous(breaks = c(0, 10, 20, 30, 40), 
                      labels = c("0%", "10%", "20%", "30%", "40%"),
                      limits = c(0, 42)) +
-  labs(title = "2-week prevalence of cough with rapid breathing, diarrhea, and fever in children under 5") +
+  #labs(title = "2-week prevalence of cough with rapid breathing, diarrhea, and fever in children under 5") +
 # ggtitle("Figure 1. Prevalence of cough with rapid breathing, diarrhea, and fever in children under 5") +
-  xlab("Indicator") + 
+  xlab("") + 
   ylab("2-week prevalence") + 
   theme(panel.background = element_rect(fill = 'white', colour = 'white'),
         plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-        axis.title.x = element_text(size = 15, face = "bold", margin = unit(c(5, 0, 0, 0), "mm")), 
-        axis.title.y = element_text(size = 15, face = "bold", margin = unit(c(0, 5, 0, 0), "mm")),
-        axis.text.x = element_text(size = 12, face = "bold", vjust=3),
-        axis.text.y = element_text(size = 12, face = "bold"),
+        #axis.title.x = element_text(size = 20, face = "bold", margin = unit(c(5, 0, 0, 0), "mm")), 
+        axis.title.y = element_text(size = 20, face = "bold", margin = unit(c(0, 5, 0, 0), "mm")),
+        axis.text.x = element_text(size = 18, face = "bold", vjust=3, color="black"),
+        axis.text.y = element_text(size = 18, face = "bold"),
 #        plot.margin = unit(c(1,1,1,1), "cm"),
-        legend.text = element_text(size=15),
-        legend.title = element_text(size=15),
+        legend.text = element_text(size=20),
+        legend.title = element_text(size=20),
         axis.ticks=element_blank()) +
         #axis.line = element_line(color="black")) + 
   geom_hline(yintercept = 0, color="black", lwd=1) +
   geom_segment(aes(x = 0.4, y = 0, xend = 0.4, yend = 40), color="black", lwd=1.15) +
-  annotate("text", x=1, y=41, label="OR=0.69", size=6) +
-  annotate("text", x=2, y=41, label="OR=0.63", size=6) +
-  annotate("text", x=3, y=41, label="OR=0.81", size=6) 
+  annotate("text", x=1, y=41, label="OR=0.69", size=7) +
+  annotate("text", x=2, y=41, label="OR=0.63", size=7) +
+  annotate("text", x=3, y=41, label="OR=0.81", size=7) 
 
 dev.off()
 
@@ -86,25 +86,25 @@ ggplot(df2, aes(x=Indicator2, y=Prevalence2, fill=Age2)) +
   scale_y_continuous(breaks = c(0, 20, 40, 60, 80, 95, 100), 
                      labels = c("0%", "20%", "40%", "60%", "80%", "95%", "100%"),
                      limits = c(0, 100)) + 
-  ggtitle("Measles vaccine coverage rates in children 9-59 months") +
-  xlab("Report of vaccination") + 
+  #ggtitle("Measles vaccine coverage rates in children 9-59 months") +
+  xlab("") + 
   ylab("Vaccination coverage rate") + 
   theme(panel.background = element_rect(fill = 'white', colour = 'white'),
         plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-        axis.title.x = element_text(size = 15, face = "bold", margin = unit(c(5, 0, 0, 0), "mm")), 
-        axis.title.y = element_text(size = 15, face = "bold", margin = unit(c(0, 5, 0, 0), "mm")),
-        axis.text.x = element_text(size = 12, face = "bold"),
-        axis.text.y = element_text(size = 12, face = "bold"),
-        legend.text = element_text(size=15),
-        legend.title = element_text(size=15),
+        axis.title.x = element_text(size = 20, face = "bold", margin = unit(c(5, 0, 0, 0), "mm")), 
+        axis.title.y = element_text(size = 20, face = "bold", margin = unit(c(0, 5, 0, 0), "mm")),
+        axis.text.x = element_text(size = 18, face = "bold", color="black"),
+        axis.text.y = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size=20),
+        legend.title = element_text(size=20),
         axis.ticks=element_blank()) + 
         geom_hline(yintercept = 95, color="firebrick") +
         geom_hline(yintercept = 0, color="black", lwd=1) +
-        geom_segment(aes(x = 0, y = 0, xend = 0, yend = 100), color="black", lwd=1.15) +
+        geom_segment(aes(x = 0.4, y = 0, xend = 0.4, yend = 100), color="black", lwd=1.15) +
         #geom_vline(xintercept = 0.4, color="black", lwd=1) +
         #geom_line(aes(a = "cutoff")) + 
-        annotate("text", x=1, y=82, label="OR=1.56", size=6) +
-        annotate("text", x=2, y=82, label="OR=0.64", size=6)  
+        annotate("text", x=1, y=82, label="OR=1.56", size=7) +
+        annotate("text", x=2, y=82, label="OR=0.64", size=7)  
         
   
 dev.off()
